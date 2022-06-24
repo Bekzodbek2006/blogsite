@@ -1,0 +1,24 @@
+{% extends 'home.html' %}
+{% block title %} Our Team {% endblock title %}
+{% block content %}
+{% load static %}
+<section class="fdb-block team-1 mt-5 mb-5">
+  <div class="container w-75  ">
+    <div class="row text-center justify-content-center">
+      <div class="col-8">
+        <h1>Our Team</h1>
+        <p class="lead">Far far away, behind the word mountains, far from the countries.</p>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap" id="center">
+    {% for y in base %}
+      <div class=" text-center w-25 " id="team">
+        <img src="{{ y.img.url }}" alt="error" width="100%" height="150">
+        <h1 class="mt-2 mb-2">{{ y.Name }}</h1>
+        <p>{{ y.Aboute }}</p>
+      </div>
+    {% endfor %}
+  </div>
+  </div>
+</section>
+{% endblock content %}

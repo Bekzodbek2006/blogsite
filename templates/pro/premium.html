@@ -1,0 +1,33 @@
+{% extends 'home.html' %}
+{% block title %} Premium Page {% endblock title %}
+{% block content %}
+<section class="fdb-block">
+  <div class="container">
+
+    <div class="row mt-5 align-items-center no-gutters container d-flex flex-wrap justify-content-center">
+
+      {% for y in base %}
+      <div
+        class="col-12 col-sm-10 col-md-8  col-lg-4 text-center mt-4 mt-lg-0 sl-1 pt-0 pt-lg-3 pb-0 pb-lg-3 bg-white fdb-touch rounded shadow w-25 "
+        id="card">
+        <div class="pb-5 pt-5 pl-4 pr-4">
+          <h2 class="font-weight-light">{{ y.Name }}</h2>
+
+          <p class="h1 mt-5 mb-5"><strong>${{ y.howMuch }}</strong> <span class="h4">/month</span></p>
+
+          <p>{{ y.aboute }}</p>
+
+          <p class="text-center pt-4"><a href="{% url 'app:home' %}" class="btn btn-primary btn-shadow">Choose Plan</a>
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+
+      {% include 'pro/subscribe.html' %}
+
+
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

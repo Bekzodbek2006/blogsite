@@ -1,0 +1,14 @@
+{% extends 'home.html' %}
+{% block title %} Add Chart {% endblock title %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container w-25" id="addchart">
+    <h1 class="text-center">You can add charts through this page</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary w-100">Add</button>
+    </form>
+</div>
+{% endblock content %}

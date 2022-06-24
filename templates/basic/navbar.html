@@ -1,0 +1,57 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light container-fluid" id="nav">
+  <!-- Container wrapper -->
+  <div class="container">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" id="menu-icon"><i class="fa-solid fa-bars fa-2x"></i></a>
+    <!-- Search form -->
+    <form class="input-group" style="width: 400px" id="nav-form">
+      <input type="search" class="form-control" placeholder="Search" aria-label="Search" />
+      <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark"
+        style="padding: 0.45rem 1.5rem 0.35rem">
+        Search
+      </button>
+    </form>
+
+    <!-- Toggle button -->
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Left links -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="{% url 'app:home' %}"><i
+              class="fas fa-home fa-lg mb-2"></i><span class="small">Home</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="{% url 'app:team' %}"><i
+              class="fa-solid fa-people-group fa-lg mb-2"></i><span class="small">Our Team</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="{% url 'app:contact' %}"><i
+              class="fas fa-comment-dots fa-lg mb-2"></i><span class="small">Contact Us</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="{% url 'app:chart' %}"><i
+              class="fa-solid fa-chart-line fa-lg mb-2"></i><span class="small">Chart</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="{% url 'app:notifactions' %}"><i
+              class="fas fa-bell fa-lg mb-2"></i><span class="small">Notifications</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="{% url 'app:premium' %}"><i
+              class="fa-solid fa-star fa-lg mb-2"></i><span class="small">Premium</span></a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

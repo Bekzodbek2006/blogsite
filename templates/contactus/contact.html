@@ -1,0 +1,51 @@
+{% extends 'home.html' %}
+{% block title %} Contact Us {% endblock title %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<!--Section: Contact v.2-->
+<section class="mb-4 container w-50 ">
+
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us
+        directly. Our team will come back to you within
+        a matter of hours to help you.</p>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form method="post" class="container w-75">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-info w-100">Submit</button>
+            </form>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>Andijon, CA 94126, UZB</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+ 998 93 174 23 28</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>contact@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
+    </div>
+
+</section>
+<!--Section: Contact v.2-->
+{% include 'contactus/contactmap.html' %}
+{% endblock content %}
