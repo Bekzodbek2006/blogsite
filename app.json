@@ -14,10 +14,10 @@
      ".travis.yml", 
      "node_modules", 
      "templates", 
-     "test", 
-     "lib", 
+     "website", 
+     "static", 
      "bin", 
      "package.json", 
-     "index.js" 
+     "home.html" 
    ] 
  }
