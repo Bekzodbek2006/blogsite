@@ -4,13 +4,25 @@
   <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
     <div class="position-sticky">
       <div class="list-group list-group-flush mx-3 mt-4">
-
-        <a href="{% url 'app:sign' %}" class="list-group-item list-group-item-action py-2 ripple ">
-          <i class="fa-solid fa-user fa-fw me-3"></i><span>Sign Up</span>
-        </a>
+        {% if request.user.is_authenticated %}
+          <h1 class="container mt-4 mb-4 text-left" style="font-size: 1.2rem;"> <i class="fa-solid fa-user" style="font-size: 28px; margin-right: 13px;"></i>{{request.user.username }}</h1>
+        {% endif %}
         <a href="{% url 'app:home' %}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
           <i class="fas fa-home fa-fw me-3"></i><span>Home</span>
         </a>
+        {% if not request.user.is_authenticated %}
+        <a href="{% url 'app:sign' %}" class="list-group-item list-group-item-action py-2 ripple ">
+          <i class="fa-solid fa-user fa-fw me-3"></i><span>Sign Up</span>
+        </a>
+        <a href="{% url 'login' %}" class="list-group-item list-group-item-action py-2 ripple ">
+          <i class="fa-solid fa-user fa-fw me-3"></i><span>Login</span>
+        </a>
+        {% endif %}
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'app:logoute' %}" class="list-group-item list-group-item-action py-2 ripple ">
+          <i class="fa-solid fa-right-from-bracket fa-fw me-3"></i><span>log out</span>
+        </a>
+        {% endif %}
         <a href="{% url 'app:chart' %}" class="list-group-item list-group-item-action py-2 ripple"><i
             class="fas fa-chart-line fa-fw me-3"></i><span>Charts</span></a>
         <a href="{% url 'app:addchart' %}" class="list-group-item list-group-item-action py-2 ripple"><i
@@ -31,6 +43,8 @@
 
         <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
             class="fas fa-money-bill fa-fw me-3"></i><span>Sales</span></a>
+
+
       </div>
     </div>
   </nav>

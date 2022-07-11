@@ -14,4 +14,5 @@ urlpatterns = [
     path("notifactions/", Notifactions.as_view(), name="notifactions"),
     path("sign/", Sign.as_view(), name="sign"),
     path("addchart/", addChart, name="addchart"),
+    path("logaout/", logout_user, name='logoute')
 ]

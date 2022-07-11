@@ -1,5 +1,7 @@
-from multiprocessing import context
 from django.shortcuts import render, redirect, reverse
+from django.contrib.auth import logout
+from multiprocessing import context
+from django.contrib import messages
 from django.views import generic
 from .models import *
 from .form import *
@@ -49,7 +51,8 @@ def Subscibe(request):
 
 class Succses(generic.TemplateView):
     template_name = 'succses.html'
-    
+
+
 
 class Unfortunate(generic.TemplateView):
     template_name = 'unfortunate.html'
@@ -58,10 +61,10 @@ class Notifactions(generic.TemplateView):
     template_name = 'notifaction.html'
 
 class Sign(generic.CreateView):
-    template_name = 'registartion/signup.html'
+    template_name = 'registration/signup.html'
     form_class = SignUp
     def get_success_url(self):
-        return reverse("app:succses")
+        return reverse("login")
     
 def addChart(request):
     if request.method == "POST":
@@ -72,3 +75,9 @@ def addChart(request):
     else:
         form = AddChart()
     return render(request, 'charts/addchart.html', {"form": form})
+
+
+def logout_user(request):
+    logout(request)
+    messages.success(request, "Your was logout")
+    return redirect('/')

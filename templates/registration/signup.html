@@ -35,6 +35,7 @@
     </style>
     <a href="{% url 'app:home' %}"><i class="fa-solid fa-arrow-left"></i></a>
     <div class="container text-light" style="width: 400px;">
+        <h1>Sign Up</h1>
         <form method="post">
             {% csrf_token %}
             {{ form|crispy }}

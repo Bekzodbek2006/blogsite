@@ -1,7 +1,35 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  font-family: sans-serif;
+}
+
+#ulmsg{
+  position: relative;
+}
+
+#msg{
+  position: absolute;
+  z-index: 5;
+  top: 0px;
+  left: 590px;
+  background-color: #FFC017;
+  width: 300px;
+  list-style: none;
+  font-size: 2rem;
+  border-radius: 5px;
+}
+
+#port {
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  left: 185px;
 }
 
 /* Color of the links BEFORE scroll */
@@ -33,6 +61,7 @@
   padding-top: auto;
   padding-bottom: auto;
 }
+
 .navbar-brand {
   font-size: unset;
   height: 3.5rem;
@@ -47,47 +76,60 @@
 
 
 
-#card{
+#card {
   margin-left: 60px;
   margin-bottom: 60px;
 }
 
-#center{
+#center {
   justify-content: center;
 }
 
-#team{
+#team {
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 50px;
 }
 
-#side-bar{
+#side-bar {
   width: 350px;
   position: absolute;
   left: -350px;
   z-index: 10;
 }
 
-#nav{
+#nav {
   position: relative;
 }
 
-#nav-form{
+#nav-form {
   position: relative;
   left: 160px;
 }
 
-#menu-icon{
+#menu-icon {
   position: absolute;
 }
 
-#addchart h1{
+#addchart h1 {
   margin-top: 70px;
   margin-bottom: 50px;
 }
 
-#addchart{
+#addchart {
   margin-bottom: 100px;
 }
+
+
+@media (max-width:1000px){
+  #nav-form{
+    display: none;
+  }
+  #side-bar {
+    width: 150px;
+    position: absolute;
+    left: -250px;
+  }
+}
+
 
